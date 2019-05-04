@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Boss直聘-职位详情页</title>
+    <link rel="shortcut icon" href="../img/favicon.png" type="image/x-icon">
+    <link rel="stylesheet" type="text/css" href="../css/main.css">
+</head>
+
+<body>
+    <div class="wrapper" id="details">
+        <div class="top-bar flex padded">
+            <div class="detail-logo">
+                <a href="../html/index.html">
+                    <img src="../img/logo.png" alt="">
+                </a>
+            </div>
+            <div class="detail-inner flex">
+                <input type="text" placeholder="搜索职位">
+                <button class="search-icon" onclick="getText()"></button>
+            </div>
+        </div>
+        <div class="job-info">
+            <div class="title flex">
+                <span>{{job.title}}</span>
+                <span class="salary">{{job.salary}}</span>
+            </div>
+            <div class="props flex">
+                <div>
+                    <span v-for="(tag,index) in job.tags">{{tag}}</span>
+                </div>
+                <div>
+                    <p>发布于04月12日</p>
+                </div>
+            </div>
+            <div class="tags">
+                <span v-for="label in job.labels">{{label}}</span>
+            </div>
+        </div>
+        <div class="user-info flex">
+            <div class="user-icon">
+                <img :src="../img/avatar_6.png" alt="">
+            </div>
+            <div class="intro">
+                <div class="name flex">
+                    <span>丁先生</span>
+                    <span class="like">感兴趣</span>
+                </div>
+                <div class="desc">
+                    <span>腾讯</span>
+                    <span>高级前端工程师</span>
+                </div>
+            </div>
+            <div class="user-btn">
+                <button class="btn">立即沟通</button>
+            </div>
+        </div>
+        <div class="job-detail">
+            <div class="padded">
+                <h3>职位描述</h3>
+                <div class="text">
+                    1.基础扎实，熟悉web标准，熟练运用HTML CSS JS构建高性能优雅的页面<br>2.熟悉移动端各类互动传播页面的开发以及相应问题的处理；<br>3.对可用性、安全、网络等相关知识有实际了解和实践经验；<br>4.至少了解一种后端开发语言，并能熟练实现基于数据接口的前端开发工作，和后台开发同学进行高效配合联调<br>5.熟悉主流前端组件框架，并能熟练借助Web调试工具定位开发问题；<br>6.思路清晰，具备良好的沟通能力和团队协作精神，并能承受一定的工作压力；<br>7.有小程序、PHP/Node、WebGL等开发经验者优先；<br>8.热爱游戏行业，英雄联盟打的好有加分哦
+                </div>
+            </div>
+            <div class="padded">
+                <h3>团队介绍</h3>
+                <div class="tags">
+                    <span>带薪年假</span>
+                    <span>年度旅游</span>
+                    <span>不打卡</span>
+                    <span>年终分红</span>
+                    <span>免费零食</span>
+                    <span>美女如云</span>
+                    <span>扁平管理</span>
+                    <span>公司氛围好</span>
+                </div>
+            </div>
+            <div class="padded">
+                <h3>公司介绍</h3>
+                <div class="text">
+                    <p>
+                        深圳市腾讯计算机系统有限公司成立于1998年11月，由马化腾、张志东、许晨晔、陈一丹、曾李青五位创始人共同创立。 是中国最大的互联网综合服务提供商之一，也是中国服务用户最多的互联网企业之一。<br>腾讯多元化的服务包括：社交和通信服务QQ及微信/WeChat、社交网络平台QQ空间、腾讯游戏旗下QQ游戏平台。
+                    </p>
+                </div>
+            </div>
+            <div class="padded">
+                <h3>工商信息</h3>
+                <div class="text">
+                    <h4>腾讯科技（深圳）有限公司</h4>
+                    <table class="flex">
+                        <tr>
+                            <td>
+                                <span>法人代表：</span>
+                                <span>马化腾</span>
+                            </td>
+                            <td>
+                                <span>注册资本：</span>
+                                <span>200万美元</span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <span>成立时间：</span>
+                                <span>2000-2-24</span>
+                            </td>
+                            <td>
+                                <span>经营状态：</span>
+                                <span>存续（在营、开业、在册）</span>
+                            </td>
+                        </tr>
+                    </table>
+                    <div class="gray">
+                        <small>数据来源：企查查</small>
+                    </div>
+                </div>
+            </div>
+            <!-- 地图-地址模块 -->
+            <!-- <div class="padded">
+                <h3>工作地址</h3>
+                <div class="map"></div>
+            </div> -->
+            <!-- 地图-地址模块 -->
+            <div class="company-info flex padded">
+                <div class="company-icon">
+                    <img src="../img/109.jpg" alt="">
+                </div>
+                <div class="info">
+                    <div class="name flex">
+                        <span>腾讯</span>
+                        <button class="btn">关注该公司</button>
+                    </div>
+                    <div class="desc">腾讯科技（深圳）有限公司</div>
+                    <div class="tags">
+                        <span>互联网</span>
+                        <span>已上市</span>
+                        <span>10000人以上</span>
+                    </div>
+                </div>
+            </div>
+            <div class="related-jobs padded">
+                <h3>相似职位</h3>
+                <div>
+                    <ul>
+                        <li>
+                            <a href="#" class="job-item flex">
+                                <div class="chart">
+                                    <img src="../img/109.jpg" alt="">
+                                </div>
+                                <div class="text">
+                                    <div class="title flex">
+                                        <h4>web前端</h4>
+                                        <span class="salary">20k-40k</span>
+                                    </div>
+                                    <div class="com flex">
+                                        <div class="company">
+                                            <span>腾讯</span>
+                                            <span>深圳</span>
+                                        </div>
+                                        <button class="btn">立即沟通</button>
+                                    </div>
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" class="job-item flex">
+                                <div class="chart">
+                                    <img src="../img/109.jpg" alt="">
+                                </div>
+                                <div class="text">
+                                    <div class="title flex">
+                                        <h4>web前端</h4>
+                                        <span class="salary">20k-40k</span>
+                                    </div>
+                                    <div class="com flex">
+                                        <div class="company">
+                                            <span>腾讯</span>
+                                            <span>深圳</span>
+                                        </div>
+                                        <button class="btn">立即沟通</button>
+                                    </div>
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" class="job-item flex">
+                                <div class="chart">
+                                    <img src="../img/109.jpg" alt="">
+                                </div>
+                                <div class="text">
+                                    <div class="title flex">
+                                        <h4>web前端</h4>
+                                        <span class="salary">20k-40k</span>
+                                    </div>
+                                    <div class="com flex">
+                                        <div class="company">
+                                            <span>腾讯</span>
+                                            <span>深圳</span>
+                                        </div>
+                                        <button class="btn">立即沟通</button>
+                                    </div>
+                                </div>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="related-companies padded">
+                <h3>推荐公司：</h3>
+                <div class="tags">
+                    <a href="#">阿里巴巴</a>
+                    <a href="#">百度</a>
+                    <a href="#">京东</a>
+                    <a href="#">华为</a>
+                    <a href="#">VIVO</a>
+                    <a href="#">OPPO</a>
+                    <a href="#">搜狐</a>
+                </div>
+            </div>
+            <div class="job-footer breadcrumb-nav">
+                <a href="#">首页</a>
+                <a href="#">深圳招聘·web前端招聘</a>
+                <a href="#">深圳web前端招聘</a>
+                <a href="#">腾讯</a>
+                <a href="#">web前端招聘</a>
+            </div>
+        </div>
+    </div>
+</body>
+<script src="../frames/vue/vue_2.6.10.js"></script>
+<script src="../js/details.js"></script>
+<script>
+    function getText() {
+        console.log("可以点击");
+    }
+</script>
+
+</html>
