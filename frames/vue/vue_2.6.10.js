@@ -12317,4 +12317,4 @@
   return Vue;
 
 }));
-console.log("vue_2.6.10版本文件引用成功");
+console.log("vue_2.6.10开发版本文件引用成功");

@@ -17,8 +17,8 @@
             <img src="../img/home-search-text.png" alt="">
             <!-- </div> -->
             <div class="search">
-                <input type="text" placeholder="搜索职位/公司">
-                <button>搜索</button>
+                <input type="text" placeholder="搜索职位/公司" maxlength="20">
+                <button onclick="clicked()">搜索</button>
             </div>
         </header>
         <section class="home-categories">
@@ -27,7 +27,8 @@
                   <div class="icon">
                     <img :src="item.icon" alt="">
                   </div>
-                  <span>{{item.name}}</span>
+                  <!-- <span>技术</span> -->
+                  <h4>{{item.name}}</h4>
                 </dt>
                 <dd>
                     <a href="./list.html" class="tag" v-for="tag in item.tags">{{tag}}</a>
@@ -42,5 +43,6 @@
 </body>
 <script src="../frames/vue/vue_2.6.10.js"></script>
 <script src="../js/index.js"></script>
+<script src="../js/test.js"></script>
 
 </html>
